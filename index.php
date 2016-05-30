@@ -2,13 +2,21 @@
 
 
 // Include the person class
-require 'person.php';
+// require 'person.php';
+// require 'cyborg.php';
 
-$hyojin = new person('Hyojin Jung', 5);
-$sam = new person('Sam Gamgee', 10);
+// $hyojin = new Cyborg('Hyojin Jung', 5);
+// $sam = new Person('Sam Gamgee', 10);
 
 
-$hyojin->introduceSelf();
-$sam->introduceSelf();
+// $hyojin->fly();
+// $sam->introduceSelf();
 
-$hyojin->sayBirthday();
+// $hyojin->sayBirthday();
+
+// $hyojin->introduceSelf();
+
+require 'page.php';
+require 'homepage.php';
+
+$homePage = new HomePage();

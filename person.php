@@ -2,14 +2,14 @@
 
 class person {
 
-	private $dob;
-	private $name = '';
-	private $weight;
-	private $height;
-	private $gender;
+	protected $dob;
+	protected $name = '';
+	protected $weight;
+	protected $height;
+	protected $gender;
 	public $nickname = '';
-	private $stomachLevel = 0;
-	private $hasShoes = false;
+	protected $stomachLevel = 0;
+	protected $hasShoes = false;
 
 	// Function that runs when you create an instance of this class
 	public function __construct($newName, $newWeight=0) {
@@ -29,8 +29,20 @@ class person {
 	}
 
 	public function sayBirthday() {
+
+		// Convert the birthday into something that you would say 
+		// Convert the date into a timestamp
+		$birthdateAsTime = strtotime( $this->dob );
+
+		// Get the day {21st etc}
+		$day = date('JS', $birthdateAsTime);
+
+		// Get the month and year {January 2001 etc}
+		$monthYear = date('F Y', $birthdateAsTime);
+
+		// Show the browser
 		echo '<p>';
-		echo 'My birthday is on '.$this->dob;
+		echo "My birthday is on the {$day} of {$monthYear}";
 		echo '</p>';
 	}
 
